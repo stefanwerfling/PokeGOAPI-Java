@@ -1,11 +1,43 @@
 
 # PokeGOAPI-Java
 Pokemon GO Java API
-See this guide for adding functionality: https://docs.google.com/document/d/1BE8O6Z19sQ54T5T7QauXgA11GbL6D9vx9AAMCM5KlRA/edit
-See this spreadsheet for RPC endpoints and progress: https://docs.google.com/spreadsheets/d/1Xv0Gw5PzIRaVou2xrl6r7qySrcmOKjQWLBjJA73YnJM/edit#gid=0
+
+[![Build Status](https://travis-ci.org/Grover-c13/PokeGOAPI-Java.svg?branch=master)](https://travis-ci.org/Grover-c13/PokeGOAPI-Java)
+
+See this guide for adding functionality:
+   https://docs.google.com/document/d/1BE8O6Z19sQ54T5T7QauXgA11GbL6D9vx9AAMCM5KlRA
+
+See this spreadsheet for RPC endpoints and progress :
+   https://docs.google.com/spreadsheets/d/1Xv0Gw5PzIRaVou2xrl6r7qySrcmOKjQWLBjJA73YnJM
+
+___
+:exclamation:
+
+This API may seem unstable. This is because the backend Pokemon GO servers are unstable.
+
+In case stuff is not working as expected, wait a moment to see if the problem resolves itself automatically.
+
+You may also check the status of the servers on [IsPokemonGoDownOrNot.com](http://ispokemongodownornot.com) or [MMOServerStatus.com](http://www.mmoserverstatus.com/pokemon_go).
+
+If you just want to use it, wait some days until the server issues are resolved (or if there is a problem with this library, you may fix it and send a PR this way).
+
+:exclamation:
+___
+
+# Build
+  - Clone the repo and cd into the folder
+  - `` git submodule update --init ``
+  - verify that you have gradle in your path
+  - `` gradle build bundle ``
+  - you should have the api bundled in ``build/libs/PokeGOAPI-Java_bundle-0.0.1-SNAPSHOT.jar``
+  
+  PS : To eclipse user, you may build one time and add the generated java class for proto into eclipse path : Right click on the project > Build path > New Source Folder > Type 'build/generated/source/proto/main/java' > Finish
 
 # Usage
-Mostly everything is accessed through the PokemonGo class in the api package.
+Include the API as jar from your own build, or use Maven/Gradle/SBT/Leiningen: https://jitpack.io/#Grover-c13/PokeGOAPI-Java/master-SNAPSHOT
+
+Mostly everything is accessed through the PokemonGo class in the API package.
+
 The constructor of PokemonGo class requires a AuthInfo object which can be obtained from GoogleLogin().login or PTCLogin().login.
 
 EG:
@@ -16,13 +48,17 @@ System.out.println(go.getPlayerProfile());
 ```
 
 ## Contributing
-1. Fork it!
-2. Create your feature branch: `git checkout -b my-new-feature`
-3. Commit your changes: `git commit -am 'Add some feature'`
-4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request :D
+  - Fork it!
+  - Create your feature branch: `git checkout -b my-new-feature`
+  - Commit your changes: `git commit -am 'Usefull information about your new features'`
+  - Push to the branch: `git push origin my-new-feature`
+  - Submit a pull request :D
 
-## Credits
-Grover-c13
+## Contributors
+  - Grover-c13
+  - jabbink
+  - zeladada
+  - darakath
+  - vmarchaud
 
-zeladada
+You can join us in the slack channel #javaapi on the pkre.slack.com (you should get an invite by a bot posted somewhere in the subreddit /r/pokemongodev)
